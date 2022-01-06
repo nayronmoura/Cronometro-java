@@ -31,7 +31,7 @@ public class FrameMain extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 contando = true;
-                a();
+                estado();
                 iniciarButton.setEnabled(false);
                 pararButton.setEnabled(true);
             }
@@ -40,7 +40,7 @@ public class FrameMain extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 contando = false;
-                a();
+                estado();
                 pararButton.setEnabled(false);
                 iniciarButton.setEnabled(true);
             }
@@ -57,7 +57,7 @@ public class FrameMain extends JFrame {
         Label.setText(Text);
     }
 
-    private void a() {
+    private void estado() {
         Thread operacao = new Thread(t);
         if (contando) {
             operacao.start();
